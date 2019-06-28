@@ -4,17 +4,9 @@ workflows:
   build:
     jobs:
       - build_and_test
-      - publish_github_release:
-          requires:
-            - build_and_test
-          filters:
-            branches:
-              only:
-                - master
-                - development
       - deploy_to_production:
           requires:
-            - publish_github_release
+            - build_and_test
           filters:
             branches:
               only: master
@@ -49,5 +41,5 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          name: "Deploy to Staging"
+          name: "Deploy to Production"
           command: npx surge build/ https://thands-first-app.surge.sh
