@@ -25,7 +25,7 @@ const Counter = ({ count, increaseCount, increaseCountAsync, decreaseCountAsync,
       <div className="number-setting">
         Change this number &#x2193;
         <input className="count-input" {...desiredCount} />
-        <button className="counter-button" onClick={() => setCount(desiredCount.value)}>Set Count to {desiredCount.value}</button>
+        <button className="counter-button" onClick={() => setCount(Number(desiredCount.value))}>Set Count to {desiredCount.value}</button>
         <div className="count-value">
           {count}
         </div>
