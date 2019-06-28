@@ -30,7 +30,7 @@ jobs:
           command: npm install
       - run: 
           name: "Build"
-          command: npm build
+          command: npm run-script build
       - run: 
           name: "Test"
           command: npm test
@@ -40,19 +40,6 @@ jobs:
       - persist_to_workspace:
           root: ./ 
           paths: .
-
-  publish_github_release:
-    docker:
-      - image: cibuilds/github:0.10
-    steps:
-      - attach_workspace:
-          at: ./
-      - run:
-          name: "Publish Release on GitHub"
-          command: |
-            ls 
-            VERSION=v0.0.1
-            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} app.zip
 
   deploy_to_production:
     docker:
