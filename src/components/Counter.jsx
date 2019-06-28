@@ -12,7 +12,7 @@ const Counter = ({ count, increaseCount, increaseCountAsync, decreaseCountAsync,
   return (
     <div className={styles.counter}>
       <div className="increment">
-        <button className="counter-button" onClick={increaseCount}>+1</button>
+        <button className="counter-button" id="increment-counter-button" onClick={increaseCount}>+1</button>
         <button className="counter-button" onClick={increaseCountAsync}>+1 after 4 seconds</button>
       </div>
       <div className="decrement">
