@@ -40,7 +40,7 @@ const Board = () => {
   }
 
   return (
-    <div>
+    <div className="board-container">
       <div className="status">{status}</div>
       <div className="board-row">
         {renderSquare(0)}
