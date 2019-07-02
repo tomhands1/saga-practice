@@ -19,14 +19,3 @@ steps:
     npm install
     npm run build
   displayName: 'Install and Build'
-
-- task: PublishTestResults@2
-  condition: succeededOrFailed()
-  inputs:
-    testRunner: JUnit
-    testResultsFiles: '**/TEST-RESULTS.xml'
-  displayName: "Test Coverage"
-
-- script: |
-    npm test
-  displayName: 'Run Tests'
