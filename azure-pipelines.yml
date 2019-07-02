@@ -26,3 +26,7 @@ steps:
     testRunner: JUnit
     testResultsFiles: '**/TEST-RESULTS.xml'
   displayName: "Test Coverage"
+
+- script: |
+    npm test
+  displayName: 'Run Tests'
