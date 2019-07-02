@@ -22,7 +22,7 @@ steps:
 
 - script: |
     npm test
-  diplayName: "Run tests"
+  displayName: "Run tests"
 
 - task: PublishTestResults@2
   condition: succeededOrFailed()
