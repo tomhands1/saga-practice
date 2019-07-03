@@ -6,6 +6,9 @@ import People from './components/People';
 import Counter from './components/Counter';
 import Board from './components/Board';
 import AutoTimer from './components/AutoTimer';
+import BarChart from './components/BarChart';
+import LineGraph from './components/LineGraph';
+
 
 const App = () => {
 
@@ -17,6 +20,8 @@ const App = () => {
           <Route exact path="/randompeople" component={People} />
           <Route exact path="/tictactoe" component={Board} />
           <Route exact path="/autotimer" component={AutoTimer} />
+          <Route exact path="/barchart" component={BarChart} />
+          <Route exact path="/linegraph" component={LineGraph} />
         </Switch>
     </div>
   );

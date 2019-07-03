@@ -164,3 +164,27 @@ $text-colour: rgb(22, 66, 109);
   text-align: center;
   font-size: 14px;
 }
+
+.bar-chart-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: $text-colour;
+  font-size: 30px;
+  font-weight: 500;
+  text-decoration-line: underline;
+}
+
+.line-graph-container {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.animate-graph-button {
+  height: 20px;
+  width: 150px;
+  background-color: $button-colour;
+  color: $text-colour;
+  border: 1px solid $text-colour;
+}

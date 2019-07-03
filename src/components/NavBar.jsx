@@ -26,6 +26,12 @@ const NavBar = () => {
       <Link to="/autotimer">
         <button className="navbar-button">Auto-Timer</button>
       </Link>
+      <Link to="/barchart">
+        <button className="navbar-button">Bar Chart</button>
+      </Link>
+      <Link to="/linegraph">
+        <button className="navbar-button">Line Graph</button>
+      </Link>
       <WindowWidth />
     </div>
   );
