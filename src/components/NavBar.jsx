@@ -32,6 +32,9 @@ const NavBar = () => {
       <Link to="/linegraph">
         <button className="navbar-button">Line Graph</button>
       </Link>
+      <Link to="/todos">
+        <button className="navbar-button">To Do</button>
+      </Link>
       <WindowWidth />
     </div>
   );

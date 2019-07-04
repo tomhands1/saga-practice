@@ -8,7 +8,7 @@ import Board from './components/Board';
 import AutoTimer from './components/AutoTimer';
 import BarChart from './components/BarChart';
 import LineGraph from './components/LineGraph';
-
+import Todo from './components/Todo';
 
 const App = () => {
 
@@ -22,6 +22,7 @@ const App = () => {
           <Route exact path="/autotimer" component={AutoTimer} />
           <Route exact path="/barchart" component={BarChart} />
           <Route exact path="/linegraph" component={LineGraph} />
+          <Route exact path="/todos" component={Todo} />
         </Switch>
     </div>
   );

@@ -5,12 +5,11 @@ import { randomPersonRequest, addPersonRequest, removeFirstPersonRequest } from 
 import { getRandomPerson } from '../selectors/RandomUser';
 
 const RandomPerson = ({ generatePerson, addPerson, removePerson, randomUser }) => {
-
   const changePerson = () => {
     generatePerson();
     addPerson();
   };
-
+  
   const removeFirst = () => {
     removePerson();
   }

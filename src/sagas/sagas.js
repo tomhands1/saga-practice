@@ -1,7 +1,9 @@
 import { put, takeEvery, all, call, takeLatest } from 'redux-saga/effects';
 import { INCREASE_COUNT, INCREASE_COUNT_ASYNC, DECREASE_COUNT, DECREASE_COUNT_ASYNC } from '../actions/Counter';
 import { fetchRandomPerson } from '../api/RandomPerson';
+import { fetchTodoList } from '../api/Todo';
 import { randomPersonReceived, addPersonReceived, REQUEST_RANDOM_PERSON, RECEIVED_REMOVE_PERSON, REQUEST_REMOVE_PERSON } from '../actions/RandomPerson';
+import { todoListReceived, REQUEST_TODO_LIST } from '../actions/Todo';
 
 const delay = (ms) => new Promise(res => setTimeout(res, ms));
 
@@ -52,11 +54,27 @@ export function* watchRemoveFirstPerson() {
   yield takeEvery(REQUEST_REMOVE_PERSON, removeFirstPerson);
 };
 
+//worker
+function* getTodos(action) {
+  try {
+    // do api call
+    const data = yield call(fetchTodoList);
+    yield put(todoListReceived(data));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export function* randomTodo() {
+  yield takeEvery(REQUEST_TODO_LIST, getTodos);
+};
+
 export default function* rootSaga() {
   yield all([
     watchIncrementAsync(),
     watchDecrementAsync(),
     randomUser(),
-    watchRemoveFirstPerson()
+    watchRemoveFirstPerson(),
+    randomTodo()
   ]);
 };
