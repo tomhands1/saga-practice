@@ -1,6 +1,6 @@
 export const fetchRandomPicture = async () => {
     try {
-        const response = await fetch("https://picsum.photos/800");
+        const response = await fetch("https://picsum.photos/600");
         const data = await response.url;
         return data;
     } catch (e) {

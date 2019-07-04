@@ -65,6 +65,8 @@ $text-colour: rgb(22, 66, 109);
 
 .board-container {
   display: flex;
+  width: 85vw;
+  margin: 10vw;
 }
 
 .board-row:after {
@@ -119,6 +121,9 @@ $text-colour: rgb(22, 66, 109);
 
 .people-container {
   display: flex;
+  width: 85vw;
+  justify-content: space-between;
+  margin: 100px;
 }
 
 .counter {
@@ -127,11 +132,15 @@ $text-colour: rgb(22, 66, 109);
 }
 
 .auto-timer {
-  font-size: 20px;
+  margin: auto;
+  font-size: 50px;
   text-align: right;
   font-weight: bold;
   .auto-timer-value {
     font-size: 150%;
+  }
+  input {
+    font-size: 75%;
   }
 }
 
@@ -209,6 +218,10 @@ $text-colour: rgb(22, 66, 109);
     font-size: 20px;
     margin-bottom: 5px;
   }
+  img {
+    border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 20px 20px 80px 20px rgba(0,0,0,0.3);
+  }
 }
 
 .picture-list-title {
@@ -220,5 +233,11 @@ $text-colour: rgb(22, 66, 109);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-gap: 20px;
-  width: 360px;
+  width: 480px;
+  img {
+    border: 1px solid rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+    height: 100px;
+    width: 100px;
+  }
 }

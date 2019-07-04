@@ -8,7 +8,7 @@ const PictureList = ({ pictureList, randomPicture, addToList }) => (
         </div>
         <div className="picture-list-columns">
             {pictureList.map((picture, index) => (
-                <img key={index} alt="collection" src={picture} height="100" width="100" />
+                <img key={index} alt="collection" src={picture} />
             ))}
         </div>
     </div>
