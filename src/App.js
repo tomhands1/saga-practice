@@ -9,21 +9,23 @@ import AutoTimer from './components/AutoTimer';
 import BarChart from './components/BarChart';
 import LineGraph from './components/LineGraph';
 import Todo from './components/Todo';
+import Pictures from './components/Pictures';
 
 const App = () => {
 
   return (
     <div className="app">
       <NavBar />
-        <Switch>
-          <Route exact path="/counter" component={Counter} />
-          <Route exact path="/randompeople" component={People} />
-          <Route exact path="/tictactoe" component={Board} />
-          <Route exact path="/autotimer" component={AutoTimer} />
-          <Route exact path="/barchart" component={BarChart} />
-          <Route exact path="/linegraph" component={LineGraph} />
-          <Route exact path="/todos" component={Todo} />
-        </Switch>
+      <Switch>
+        <Route exact path="/counter" component={Counter} />
+        <Route exact path="/randompeople" component={People} />
+        <Route exact path="/tictactoe" component={Board} />
+        <Route exact path="/autotimer" component={AutoTimer} />
+        <Route exact path="/barchart" component={BarChart} />
+        <Route exact path="/linegraph" component={LineGraph} />
+        <Route exact path="/todos" component={Todo} />
+        <Route exact path="/pictures" component={Pictures} />
+      </Switch>
     </div>
   );
 };

@@ -35,6 +35,9 @@ const NavBar = () => {
       <Link to="/todos">
         <button className="navbar-button">To Do</button>
       </Link>
+      <Link to="/pictures">
+        <button className="navbar-button">Pictures</button>
+      </Link>
       <WindowWidth />
     </div>
   );

@@ -4,6 +4,8 @@ import { fetchRandomPerson } from '../api/RandomPerson';
 import { fetchTodoList } from '../api/Todo';
 import { randomPersonReceived, addPersonReceived, REQUEST_RANDOM_PERSON, RECEIVED_REMOVE_PERSON, REQUEST_REMOVE_PERSON } from '../actions/RandomPerson';
 import { todoListReceived, REQUEST_TODO_LIST } from '../actions/Todo';
+import { fetchRandomPicture } from '../api/RandomPicture';
+import { receivedRandomPicture, RANDOM_PICTURE_REQUEST } from '../actions/RandomPicture';
 
 const delay = (ms) => new Promise(res => setTimeout(res, ms));
 
@@ -69,12 +71,28 @@ export function* randomTodo() {
   yield takeEvery(REQUEST_TODO_LIST, getTodos);
 };
 
+//worker
+function* getRandomPicture(action) {
+  try {
+    // do api call
+    const data = yield call(fetchRandomPicture);
+    yield put(receivedRandomPicture(data));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export function* randomPicture() {
+  yield takeEvery(RANDOM_PICTURE_REQUEST, getRandomPicture);
+};
+
 export default function* rootSaga() {
   yield all([
     watchIncrementAsync(),
     watchDecrementAsync(),
     randomUser(),
     watchRemoveFirstPerson(),
-    randomTodo()
+    randomTodo(),
+    randomPicture()
   ]);
 };
