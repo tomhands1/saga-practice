@@ -38,6 +38,9 @@ const NavBar = () => {
       <Link to="/pictures">
         <button className="navbar-button">Pictures</button>
       </Link>
+      <Link to="/cards">
+        <button className="navbar-button">Cards</button>
+      </Link>
       <WindowWidth />
     </div>
   );

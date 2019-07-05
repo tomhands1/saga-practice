@@ -10,6 +10,7 @@ import BarChart from './components/BarChart';
 import LineGraph from './components/LineGraph';
 import Todo from './components/Todo';
 import Pictures from './components/Pictures';
+import CardMatch from './components/CardMatch/CardMatch';
 
 const App = () => {
 
@@ -25,6 +26,7 @@ const App = () => {
         <Route exact path="/linegraph" component={LineGraph} />
         <Route exact path="/todos" component={Todo} />
         <Route exact path="/pictures" component={Pictures} />
+        <Route exact path="/cards" component={CardMatch} />
       </Switch>
     </div>
   );
