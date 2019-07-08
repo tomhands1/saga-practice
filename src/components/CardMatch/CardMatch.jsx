@@ -5,7 +5,7 @@ import Card from './Card';
 import './CardMatch.scss';
 
 const duplicateCard = () => {
-    return [0, 1, 2, 3, 4, 5, 6, 7].reduce((preValue, current, index, array) => {
+    return [0, 1, 2, 3, 4, 5, 6, 7].reduce((preValue, current) => {
         return preValue.concat([current, current])
     }, []);
 };
@@ -67,7 +67,7 @@ const CardMatch = () => {
     };
 
     const isGameOver = () => {
-        return isFlipped.every((element, index, array) => element !== false);
+        return isFlipped.every((element) => element !== false);
     };
 
     return (

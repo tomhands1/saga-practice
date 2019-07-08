@@ -198,6 +198,24 @@ $text-colour: rgb(22, 66, 109);
   border: 1px solid $text-colour;
 }
 
+.todo-container {
+  width: 50vw;
+  margin: auto;
+  .todo-button {
+    width: 150px;
+    background-color: $button-colour;
+    color: $text-colour;
+    border: 1px solid $text-colour;
+    margin: 10px;
+    padding: 10px;
+    font-size: 20px;
+  }
+  .todo-input {
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
 .pictures-container {
   display: flex;
   width: 85vw;

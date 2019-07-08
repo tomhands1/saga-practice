@@ -32,13 +32,11 @@ const Todo = ({ todos, generateTodo, removeTodo, createTodo }) => {
     }
 
     return (
-        <div>
+        <div className="todo-container">
             <div>
                 {todos.length ?
                     todos.map((todo, index) => (
-                        <div key={index}>
-                            <div onClick={() => deleteTodo(index)}>{index + 1}. {todo.title}</div>
-                        </div>
+                            <div className="todo-item" key={index} onClick={() => deleteTodo(index)}>{index + 1}. {todo.title}</div>
                     ))
                     :
                     <div>
@@ -47,11 +45,11 @@ const Todo = ({ todos, generateTodo, removeTodo, createTodo }) => {
                 }
             </div>
             <div>
-                <button onClick={getTodo}>Get to do!</button>
+                <button className="todo-button" onClick={getTodo}>Get to do!</button>
             </div>
             <div>
-                <input ref={todoRef} onChange={updateTodo}></input>
-                <button onClick={addTodo}>Add to do</button>
+                <input className="todo-input" ref={todoRef} onChange={updateTodo}></input>
+                <button className="todo-button" onClick={addTodo}>Add to do</button>
             </div>
         </div>
     );
